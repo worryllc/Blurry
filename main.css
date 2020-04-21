@@ -1,0 +1,24 @@
+.logo {
+    font-family: Product Sans;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.logo-slogan {
+    font-family: Product Sans;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.bg-black {
+    background-color: black!important;
+}
+
+.navbar-dark .nav-item .nav-link {
+    color: white!important;
+}
