@@ -4,7 +4,6 @@
     color: black;
     font-weight: bold;
     letter-spacing: 4px;
-    margin: 10px 0 0 0;
 }
 
 .header-body{
@@ -23,6 +22,11 @@
     background-color: black!important;
 }
 
+.bg-skin {
+    background-size: cover;
+    background-image: url("https://elsword.koggames.com/wp-content/uploads/2020/04/webskin_20200408.jpg");
+}
+
 .fadein-bottom {
     position: relative;
     animation: bottomfade 0.9s;
@@ -36,11 +40,6 @@
     animation-name: bottomfade;
 }
 
-
-.anim-delay{
-    animation-delay: 90ms!important;
-}
-
 @keyframes bottomfade{
    0% {
        bottom: -100px;
@@ -50,4 +49,20 @@
        bottom: 0;
        opacity: 100%;
    }
+}
+
+.content-main {
+    margin-bottom: 0!important;
+    padding-bottom: 2rem!important;
+    padding-top: 2rem!important;
+}
+
+.footer {
+    position: relative;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.footer p {
+    margin-bottom: 0!important;
 }
