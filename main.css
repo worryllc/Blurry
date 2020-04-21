@@ -1,13 +1,17 @@
-.logo {
+.header {
     font-family: Product Sans;
     text-decoration: none;
     color: black;
     font-weight: bold;
     letter-spacing: 4px;
-    margin: 0;
+    margin: 10px 0 0 0;
 }
 
-.logo-slogan {
+.header-body{
+    padding-top: 16px;
+}
+
+.header-subtext {
     font-family: Product Sans;
     text-decoration: none;
     color: black;
@@ -19,6 +23,31 @@
     background-color: black!important;
 }
 
-.navbar-dark .nav-item .nav-link {
-    color: white!important;
+.fadein-bottom {
+    position: relative;
+    animation: bottomfade 0.9s;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: bottomfade;
+}
+
+
+.anim-delay{
+    animation-delay: 90ms!important;
+}
+
+@keyframes bottomfade{
+   0% {
+       bottom: -100px;
+       opacity: 0%;
+   }
+   100% {
+       bottom: 0;
+       opacity: 100%;
+   }
 }
