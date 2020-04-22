@@ -23,8 +23,10 @@
 }
 
 .bg-skin {
-    background-size: cover;
+    background-size: fit;
+    background-position-x: 50%;
     background-image: url("https://elsword.koggames.com/wp-content/uploads/2020/04/webskin_20200408.jpg");
+    padding-top: 15px;
 }
 
 .fadein-bottom {
@@ -49,6 +51,28 @@
        bottom: 0;
        opacity: 100%;
    }
+}
+
+.fadein {
+    position: relative;
+    animation: fadein 0.8s;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: fadein;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 .content-main {
