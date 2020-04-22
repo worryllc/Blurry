@@ -20,6 +20,7 @@
 
 .navtab-light a {
     font-family: Product Sans;
+    font-size: 110%;
     color: rgba(0,0,0,0.5);
 }
 
@@ -30,6 +31,10 @@
 
 .bg-black {
     background-color: black!important;
+}
+
+.bg-yellow {
+    background-color: rgb(255, 241, 112);
 }
 
 .bg-skin {
@@ -89,6 +94,81 @@
     margin-bottom: 0!important;
     padding-bottom: 2rem!important;
     padding-top: 2rem!important;
+}
+
+.content-faq {
+    font-size: 15px;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 3px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.formula {
+    font-size: 110%;
+    font-weight: 500;
+    background-color: rgba(0,0,0,0.1);
+    padding: 6px 6px;
+}
+
+.formula-footer {
+    padding-top: 16px;
+}
+
+.elsword {
+    background-color: #ff4444;
+}
+
+.aisha {
+    background-color: #c233ff;
+}
+
+.rena {
+    background-color: #00ff00;
+}
+
+.raven {
+    background-color: #999999;
+}
+
+.eve {
+    background-color: #ff93ae;
+}
+
+.chung {
+    background-color: #99ccff;
+}
+
+.ara {
+    background-color: #ff7e00;
+}
+
+.elesis {
+    background-color: #b81425;
+}
+
+.add {
+    background-color: #9f81f7;
+}
+
+.lu {
+    background-color: #3f81f3;
+}
+
+.rose {
+    background-color: #fff653;
+}
+
+.ain {
+    background-color: #19d2a8;
+}
+
+.laby {
+    background-color: #e64d75;
 }
 
 .footer {

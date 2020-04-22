@@ -25,7 +25,7 @@
 
 <body>
   <div class="container-fluid">
-    <h1 class="header">blurry.</h1>
+    <h1 class="header">blurry?</h1>
     <p class="header-subtext">All your Elsword needs in one place.</p>
   </div>
   <nav class="navbar navbar-dark navbar-expand-lg bg-black">
@@ -56,9 +56,12 @@
     </div>
   </nav>
   <div class="container-fluid bg-skin">
-    <div class="card">
+    <div class="jumbotron jumbotron-fluid content-main" style="background-color: rgba(255,255,255,0.7);">
       <div class="card-body">
-        <h2 class="header header-body">Frequently Asked Questions </h2>
+        <blockquote class="blockquote">
+          <p class="header header-body display-4 margin-bottom-1">Frequently Asked Questions</p>
+          <footer class="blockquote-footer">Responses by Ashal, edited by Aya</footer>
+        </blockquote>
         <hr class="my-3">
         <div class="accordion" id="FAQ">
           <div class="card">
@@ -72,13 +75,18 @@
             </div>
 
             <div id="collapseAdd" class="collapse" aria-labelledby="add-dmg" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <p>Additional Damage increases the damage of skills and commands based one the formula below:</p>
+                <span class="formula">0.5 * Attack * Additional Damage * Skill</span>
+                <p class="formula-footer">
+                  <strong>Attack</strong> - Physical or Magical Attack stat of your character without any +X% Attack
+                  bonuses from equipment. Permanent Passives increasing/decreasing Attack still apply.
+                  <br>
+                  <strong>Additional Damage</strong> - Additional Damage stat of your character
+                  <br>
+                  <strong>Skill</strong> - Damage of the used skill/attack. Increased by Skill Tier Damage and Specific
+                  Skill Damage
+                </p>
               </div>
             </div>
           </div>
@@ -92,13 +100,40 @@
               </h2>
             </div>
             <div id="collapseSkill" class="collapse" aria-labelledby="skilldmg" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <p>Skill Damage sources are separated into different pools. The values inside these pools are stacking
+                  additively and the pools themselves are stacking multiplicatively.</p>
+                <p>
+                  <strong>All Skill Damage</strong> - Only the "All Skill Damage" stat from equipment/other permanent
+                  sources.
+                  <br>
+                  <strong>Skill Tier Damage</strong> - Skill Damage specific to a single Skill Tier (Bravery,
+                  Strength, Tenacity, Flexibility, Hyperactive) and Skill Damage specific to a single Skill. "All Skill
+                  Damage" ERP is also included here.
+                  May also include some passives that increase damage of specific skill.
+                  <br>
+                  <strong>Skill Tier Stacking Damage</strong> - Stacking Buff from currently unobtainable effect
+                  "Upon Using a [Bravery/Strength/Tenacity/Flexibility] Skill, increase
+                  [Bravery/Strength/Tenacity/Flexibility] Skill's damage for [10/15] sec. by X%".
+                  <br>
+                  <strong>Command Attack Damage</strong> - Stat specifically increasing the damage of commands. If a
+                  skill also counts as a command, Command Damage gets its own pool.
+                </p>
+                <p>Any other source of Skill Damage, like class specific buffs, would get their own pool.
+                  The resulting multiplier of all these pools is then used to multiply the damage of the affected
+                  attacks.
+                </p>
+                <p class="margin-bottom-1">
+                  <strong>Example:</strong> <span class="bg-danger">40% All Skill Damage,</span><span
+                    class="bg-warning"> 70% Skill Tier Damage,</span><span class="bg-yellow"> 40% Specific Skill
+                    Damage,</span><span class="bg-success"> 5 Stacks of 10% Skill Tier Stacking Damage</span>
+                </p>
+                <p>
+                  <strong>Solution</strong>: <span class="formula">(1 + <span class="bg-danger">0.4</span>) * (1 + <span
+                      class="bg-warning">0.7</span> + <span class="bg-yellow">0.4</span>) * (1 + <span
+                      class="bg-success">5 * 0.1</span>) =
+                    <strong>4.41</strong> ≡ 341% increase</span>
+                </p>
               </div>
             </div>
           </div>
@@ -112,13 +147,42 @@
               </h2>
             </div>
             <div id="collapseCrit" class="collapse" aria-labelledby="critdmg" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <p>There are several sources of Critical Damage that stack together differently. Unless
+                  you have 100% Critical Chance, the average damage increase from Critical Damage will be reduced,
+                  because not all of your attacks are going to be criticals. To calculate your average damage multiplier
+                  with Critical Chance and Damage, you want to use this formula:
+                </p>
+                <p>
+                  <span class="formula">1 - Crit_Ch + Crit_Ch * ((1.5 + Crit_D_Base) * (1 + Crit_D_Mult)
+                    + Crit_D_Add + Crit_D_Equip) * Crit_D_Debuff</span>
+                </p>
+                <p>
+                  <strong>Crit_Ch</strong> - Critical Chance stat of your character
+                  <br><strong>Crit_D_Base</strong> - Critical Damage passives and buffs that change Base Critical Damage
+                  from 150%
+                  <br><strong>Crit_D_Add</strong> - Critical Damage passives and buffs that stack additively
+                  <br><strong>Crit_D_Mult</strong> - Critical Damage passives and buffs that stack multiplicatively
+                  <br><strong>Crit_D_Equip</strong> - Critical Damage from gear that shows in the stat window
+                  <br><strong>Crit_D_Debuff</strong> - Debuffs that increase received Critical Damage
+                </p>
+                <p>
+                  Most passives and buffs are currently additive. There were some multiplicative ones in
+                  the past, but recently all, that i know, got changed to additive too. The only debuffs increasing
+                  Critical Damage, that i know of, are <a href="https://elwiki.net/w/Stigma_Shot">Stigma Shot</a> and <a
+                    href="https://elwiki.net/w/Remaining_Stigma">Remaining Stigma</a>.
+                </p>
+                <p class="margin-bottom-1">
+                  <strong>Example</strong>: <span class="bg-danger">90% Critical Chance,</span><span
+                    class="bg-warning">40% Critical Damage from gear,</span><span class="bg-yellow">10% buff to
+                    Base Critical Damage,</span><span class="bg-success">20% multiplicative Critical Damage buff</span>
+                </p>
+                <p>
+                  <strong>Solution</strong>: <span class="formula">1 - <span class="bg-danger">0.9</span> + <span
+                      class="bg-danger">0.9</span> * ((1.5 + <span class="bg-yellow">0.1</span>) * (1 + <span
+                      class="bg-success">0.2</span>)) + <span class="bg-warning">0.4</span>) = <strong>2.188</strong> ≡
+                    118.8% increase</span>
+                </p>
               </div>
             </div>
           </div>
@@ -132,13 +196,264 @@
               </h2>
             </div>
             <div id="collapseNorm" class="collapse" aria-labelledby="norm" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <div class="col">
+                  <p>
+                    Normalization means that the more of a stat you have, the harder it is to get. Currently there are
+                    10 stats that are getting normalized. These stats are:
+                    Critical Chance, Maximize, Additional Damage, Damage Reduction, Awakening Charge, MP Recovery when
+                    Attacking, MP Recovery when Attacked, Attack Speed, Moving Speed and Jump Speed.
+                  </p>
+                  <p>
+                    Different stats are normalized in different ways. Each stat has Efficiency stages that show how many
+                    percents of that stat you will get while in the corresponding range of values.
+                    All the efficiency stages are in the table below and visualised in the graph. For easy calculations
+                    with normalized stats, you can use also use my <a href="calcs/stats">calculator</a>.
+                  </p>
+                  <select onchange="faq_select_show('normalization'), faq_normalization_graph_update();"
+                    id="normalization_select" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+                    <option value="maximize">Maximize</option>
+                    <option value="critical">Critical Chance</option>
+                    <option value="add">Additional Damage</option>
+                    <option value="red">Damage Reduction</option>
+                    <option value="awkcharge">Awakening Charge</option>
+                    <option value="mpgain">MP Recovery when Attacking / MP Recovery when Attacked</option>
+                    <option value="speed"> Attack Speed / Moving Speed / Jump Speed</option>
+                  </select>
+                  <span class="select2 select2-container select2-container--default" dir="ltr"style="width: 400px;">
+                    <span class="selection">
+                      <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
+                        aria-expanded="false" tabindex="0" aria-labelledby="select2-normalization_select-container">
+                        <span class="select2-selection__rendered" id="select2-normalization_select-container" title="Maximize">
+                        </span>
+                        <span class="select2-selection__arrow" role="presentation">
+                          <b role="presentation"></b>
+                        </span>
+                      </span>
+                    </span>
+                    <span class="dropdown-wrapper" aria-hidden="true"></span>
+                  </span>
+
+                  <table id="normalization_maximize">
+                    <tbody>
+                      <tr>
+                        <th>Unnormalized</th>
+                        <th>Normalized</th>
+                        <th>Efficiency</th>
+                      </tr>
+                      <tr>
+                        <td>0% ~ 40%</td>
+                        <td>0% ~ 40%</td>
+                        <td>100%</td>
+                      </tr>
+                      <tr>
+                        <td>40% ~ 80%</td>
+                        <td>40% ~ 70%</td>
+                        <td>75%</td>
+                      </tr>
+                      <tr>
+                        <td>80% ~ 120%</td>
+                        <td>70% ~ 90%</td>
+                        <td>50%</td>
+                      </tr>
+                      <tr>
+                        <td>120% ~ 160%</td>
+                        <td>90% ~ 100%</td>
+                        <td>25%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table id="normalization_critical">
+                    <tbody>
+                      <tr>
+                        <th>Unnormalized</th>
+                        <th>Normalized</th>
+                        <th>Efficiency</th>
+                      </tr>
+                      <tr>
+                        <td>0% ~ 40%</td>
+                        <td>0% ~ 40%</td>
+                        <td>100%</td>
+                      </tr>
+                      <tr>
+                        <td>40% ~ 75%</td>
+                        <td>40% ~ 68%</td>
+                        <td>80%</td>
+                      </tr>
+                      <tr>
+                        <td>75% ~ 105%</td>
+                        <td>68% ~ 86%</td>
+                        <td>60%</td>
+                      </tr>
+                      <tr>
+                        <td>105% ~ 140%</td>
+                        <td>86% ~ 100%</td>
+                        <td>40%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table id="normalization_add">
+                    <tbody>
+                      <tr>
+                        <th>Unnormalized</th>
+                        <th>Normalized</th>
+                        <th>Efficiency</th>
+                      </tr>
+                      <tr>
+                        <td>0% ~ 40%</td>
+                        <td>0% ~ 40%</td>
+                        <td>100%</td>
+                      </tr>
+                      <tr>
+                        <td>40% ~ 80%</td>
+                        <td>40% ~ 70%</td>
+                        <td>75%</td>
+                      </tr>
+                      <tr>
+                        <td>80% ~ 125%</td>
+                        <td>70% ~ 92.5%</td>
+                        <td>50%</td>
+                      </tr>
+                      <tr>
+                        <td>125% ~ 160%</td>
+                        <td>92.5% ~ 102.5%</td>
+                        <td>25%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table id="normalization_red">
+                    <tbody>
+                      <tr>
+                        <th>Unnormalized</th>
+                        <th>Normalized</th>
+                        <th>Efficiency</th>
+                      </tr>
+                      <tr>
+                        <td>0% ~ 20%</td>
+                        <td>0% ~ 20%</td>
+                        <td>100%</td>
+                      </tr>
+                      <tr>
+                        <td>20% ~ 45%</td>
+                        <td>20% ~ 32.5%</td>
+                        <td>50%</td>
+                      </tr>
+                      <tr>
+                        <td>45% ~ 75%</td>
+                        <td>32.5% ~ 41.25%</td>
+                        <td>35%</td>
+                      </tr>
+                      <tr>
+                        <td>75% ~ 95%</td>
+                        <td>41.25% ~ 45%</td>
+                        <td>15%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table id="normalization_awkcharge">
+                    <tbody>
+                      <tr>
+                        <th>Unnormalized</th>
+                        <th>Normalized</th>
+                        <th>Efficiency</th>
+                      </tr>
+                      <tr>
+                        <td>0% ~ 20%</td>
+                        <td>0% ~ 20%</td>
+                        <td>100%</td>
+                      </tr>
+                      <tr>
+                        <td>20% ~ 35%</td>
+                        <td>20% ~ 32.75%</td>
+                        <td>85%</td>
+                      </tr>
+                      <tr>
+                        <td>35% ~ 45%</td>
+                        <td>32.75% ~ 40.25%</td>
+                        <td>75%</td>
+                      </tr>
+                      <tr>
+                        <td>45% ~ 60%</td>
+                        <td>40.25% ~ 50%</td>
+                        <td>65%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table id="normalization_mpgain">
+                    <tbody>
+                      <tr>
+                        <th>Unnormalized</th>
+                        <th>Normalized</th>
+                        <th>Efficiency</th>
+                      </tr>
+                      <tr>
+                        <td>0% ~ 30%</td>
+                        <td>0% ~ 30%</td>
+                        <td>100%</td>
+                      </tr>
+                      <tr>
+                        <td>30% ~ 55%</td>
+                        <td>30% ~ 38.75%</td>
+                        <td>35%</td>
+                      </tr>
+                      <tr>
+                        <td>55% ~ 85%</td>
+                        <td>38.75% ~ 46.25%</td>
+                        <td>25%</td>
+                      </tr>
+                      <tr>
+                        <td>85% ~ 110%</td>
+                        <td>46.25% ~ 50%</td>
+                        <td>15%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <table id="normalization_speed">
+                    <tbody>
+                      <tr>
+                        <th>Unnormalized</th>
+                        <th>Normalized</th>
+                        <th>Efficiency</th>
+                      </tr>
+                      <tr>
+                        <td>0% ~ 20%</td>
+                        <td>0% ~ 20%</td>
+                        <td>100%</td>
+                      </tr>
+                      <tr>
+                        <td>20% ~ 35%</td>
+                        <td>20% ~ 24.5%</td>
+                        <td>30%</td>
+                      </tr>
+                      <tr>
+                        <td>35% ~ 55%</td>
+                        <td>24.5% ~ 28.5%</td>
+                        <td>20%</td>
+                      </tr>
+                      <tr>
+                        <td>55% ~ 70%</td>
+                        <td>28.5% ~ 30%</td>
+                        <td>10%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p>
+                    The Unnormalized column shows the stats that you would have if there was no normalization. The
+                    Normalized column shows the actual amount of stats that you will have in the stats window.
+                  </p>
+                  <p>
+                    Even tho buffs are not showed in the stats window, normalization can still affect them. If a stat
+                    bonus crosses the efficiency stage, different parts of the stat bonus is normalized differently.
+                  </p>
+
+                </div>
               </div>
             </div>
           </div>
@@ -152,13 +467,44 @@
               </h2>
             </div>
             <div id="collapseHH" class="collapse" aria-labelledby="hh" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <p>
+                  Because the Head Hunter not only increases Boss Damage, but also decreases Attack Power, the actual
+                  effectiveness of it is decreased.
+                  Because both the Boss Damage increase and the Attack Power decrease are additive to other bonuses, you
+                  need to know these bonuses to properly calculate the actual damage increase by using this formula:
+                </p>
+                <p>
+                  <span class="formula">(1 + Boss_damage + HH_Boss_damage) * (1 + Attack_bonus +
+                    HH_Attack_bonus) / ((1 + Boss_damage) * (1 + Attack_bonus)) </span>
+                </p>
+                <p>
+                  <strong>Boss_damage</strong> - Boss Damage stat of your character
+                  <br><strong>HH_Boss_damage</strong> - Boss Damage bonus of the Head Hunter (Rare = 0.4, Elite = 0.6,
+                  Unique = 0.8)
+                  <br><strong>Attack_bonus</strong> - Attack Power bonuses from permanent passives and guild skills
+                  <br><strong>HH_Attack_bonus</strong> - Attack Power reduction of the Head Hunter (Rare = -0.18, Elite
+                  = -0.2, Unique = -0.24)
+                </p>
+                <p class="margin-bottom-1">
+                  <strong>Example</strong>: <span class="bg-danger">40% Boss Damage,</span><span class="bg-warning">10%
+                    Attack Power from Transcendence passive,</span><span class="bg-yellow">1.5% Attack Power from Guild
+                    passive,</span><span class="bg-success">Elite
+                    Head Hunter</span>
+                </p>
+                <p>
+                  <strong>Solution</strong>: <span class="formula">(1 + <span class="bg-danger">0.4</span> + <span
+                      class="bg-success">0.6</span>) * (1 + <span class="bg-warning">0.1</span> + <span
+                      class="bg-yellow">0.015</span> - <span class="bg-success">0.2</span>) / ((1 + <span
+                      class="bg-danger">0.4</span>) * (1 + <span class="bg-warning">0.1</span> + <span
+                      class="bg-yellow">0.015</span>)) =
+                    <strong>1.1723</strong> ≡ 17.23% increase</span>
+                </p>
+                <p>
+                  You can also use <a href="resources/headhunter">this</a> table and graph to see the
+                  effectiveness of all Head Hunter rarities and the benefits of upgrading Head Hunter based on your Boss
+                  Damage and Attack passives.
+                </p>
               </div>
             </div>
           </div>
@@ -173,12 +519,46 @@
             </div>
             <div id="collapseDef" class="collapse" aria-labelledby="def" data-parent="#FAQ">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                <p>
+                  Defense has two values, the percent value and the numeric value. The percent value
+                  shows how much it reduces received damage. The numeric value is used whenever the Defense is increased
+                  or decreased by stats or effects. To find the numeric value of Defense from the percent value, use
+                  this formula:
+                </p>
+                <p>
+                  <span class="formula">Def_multiplier * Def_percent / (1 - Def_percent)</span>
+                </p>
+                <p>To find the percent value of Defense from the numeric value, use this formula:</p>
+                <p>
+                  <span class="formula">(Def_numeric / Def_multiplier) / (1 + Def_numeric /
+                    Def_multiplier)</span>
+                </p>
+                <p>
+                  <strong>Def_multiplier</strong> = Multiplier based on the level: <span class="formula">258.6436 +
+                    Level * 39.3526</span>
+                </p>
+                <p>
+                  <strong>Def_percent</strong> = Defense by which the enemy reduces the received damage
+                  <br><strong>Def_numeric</strong> = Value of Defense that would be shown in the stats window
+                </p>
+                <p class="margin-bottom-1"><strong>Example</strong>: <span class="bg-danger">99 level,</span><span
+                    class="bg-warning">41% Defense</span>
+                </p>
+                <p>
+                  <strong>Solution</strong>: <span class="formula">(258.6436 + <span class="bg-danger">99</span> *
+                    39.3526) * <span class="bg-warning">0.41</span> / (1 - <span class="bg-warning">0.41</span>) =
+                    <strong>2887.06</strong> Defense</span>
+                </p>
+                <p class="margin-bottom-1">
+                  <strong>Example</strong>: <span class="bg-danger">99 level,</span><span class="bg-yellow">5000
+                    Defense</span>
+                </p>
+                <p>
+                  <strong>Solution</strong>: <span class="formula">(<span class="bg-yellow">5000</span> / (258.6436 +
+                    <span class="bg-danger">99</span> * 39.3526)) / (1
+                    + <span class="bg-yellow">5000</span> / (258.6436 + <span class="bg-danger">99</span> * 39.3526))
+                    = <strong>0.54618</strong> ≡ 54.618% Defense</span>
+                </p>
               </div>
             </div>
           </div>
@@ -192,13 +572,70 @@
               </h2>
             </div>
             <div id="collapseIgnDef" class="collapse" aria-labelledby="ignDef" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <p>
+                  The effectiveness of Ignore Defense depends on the Defense of the enemy and the amount of Defense
+                  Ignore. Unlike most other stats, the effectiveness of Ignore Defense is not linear and actually
+                  increases with higher values of it.
+                  The Ignore Defense reduces the numeric value of the Defense, not the percent value. It is still
+                  possible to calculate the damage multiplier directly from the percent value of Defense by combining
+                  the formulas. This is the final formula to calculate the modifier:
+                </p>
+                <p>
+                  <span class="formula">1 / (1 - Def_percent * Def_ignore)</span>
+                </p>
+                <p>
+                  <strong>Def_percent</strong> - Percent Defense of the enemy
+                  <br><strong>Def_ignore</strong> - Value of Ignore Defense
+                </p>
+                <p>
+                  Ignore Defense from different sources and Defense reducing debuffs stack multiplicatively. To combine
+                  two (or more) Ignore Defense or Defense reducing sources use this formula:
+                </p>
+                <br>
+                <p>
+                  <span class="formula">1 - (1 - Def_ignore_1) * (1 - Def_ignore_2)</span>
+                </p>
+                <p class="margin-bottom-1">
+                  <strong>Example</strong>: <span class="bg-danger">45% Defense,</span><span class="bg-warning">20%
+                    Ignore Defense,</span><span class="bg-yellow">50% Defense reduction debuff</span>
+                </p>
+                <p>
+                  <strong>Solution</strong>: <span class="formula">1 / (1 - <span class="bg-danger">0.45</span> * (1 -
+                    (1 - <span class="bg-warning">0.2</span>) * (1 - <span class="bg-yellow">0.5</span>))) =
+                    <strong>1.3698</strong> ≡ 36.98% increase</span>
+                </p>
+                <p>
+                  You can also use <a href="resources/defence_ignore">this</a> table and graph to see and compare the
+                  effectiveness of various values of Ignore Defense against various values of Defense.
+                </p>
+                <hr>
+                <p>
+                  Unlike Ignore Defense, Defense Pierce reduces the percentage value of Defense. If a Defense Pierce is
+                  present, the formula gets more complicated:
+                </p>
+                <p>
+                  <span class="formula">(1 - Def_percent * (1 - Def_pierce)) / ((1 - Def_percent) * (1 - Def_percent *
+                    Def_ignore * (1 - Def_pierce)))</span>
+                </p>
+                <p>
+                  <strong>Def_pierce</strong> - Value of Defense Pierce
+                </p>
+                <p>
+                  Defense Pierce from different sources stacks the same way as Ignore Defense. Percent chance to Ignore
+                  100% Defense behaves on average the same way as Defense Pierce.
+                </p>
+                <br>
+                <p class="margin-bottom-1">
+                  <strong>Example 2</strong>: <span class="bg-danger">45% Defense,</span><span class="bg-warning">20%
+                    Ignore Defense,</span><span class="bg-success">10% Defense Pierce</span>
+                </p>
+                <p>
+                  <strong>Solution 2</strong>: <span class="formula">(1 - <span class="bg-danger">0.45</span> * (1 -
+                    <span class="bg-success">0.1</span>)) / ((1 - <span class="bg-danger">0.45</span>) * (1 - <span
+                      class="bg-danger">0.45</span> * <span class="bg-warning">0.2</span> * (1 - <span
+                      class="bg-success">0.1</span>))) = <strong>1.1772</strong> ≡ 17.72% increase</span>
+                </p>
               </div>
             </div>
           </div>
@@ -232,13 +669,70 @@
               </h2>
             </div>
             <div id="collapseAdapt" class="collapse" aria-labelledby="adapt" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <p>
+                  Adaptation directly reduces the effect of the Demon Realm debuff by the stated value, but you can't
+                  reduce the debuff below 0%.
+                  Because of this, the relative effect of Adaptation increases when the debuff has higher value (The
+                  absolute effect of Adaptation doesn't change).
+                  To calculate the relative effect of Adaptation you can use this formula:
+                </p>
+                <p>
+                  <span class="formula">(1 - Demon_debuff + Adapt) / (1 - Demon_debuff)</span>
+                </p>
+                <p>
+                  <strong>Demon_debuff</strong> - Strength of the Demon Realm debuff, depends on the dungeon
+                  <br><strong>Adapt</strong> - Value of Adaptation
+                </p>
+                <p>
+                  You can also check the relative effectiveness of the Adaptation depending on the strength of the Demon
+                  Realm debuff in a table below. (1% Adaptation still reduces the debuff by 1%)
+                </p>
+                <table class="table table-bordered" id="adaptation_table">
+                  <tbody>
+                    <tr>
+                      <th>Debuff strength</th>
+                      <th>Dungeons</th>
+                      <th>Adaptation effectiveness</th>
+                    </tr>
+                    <tr>
+                      <td>10%</td>
+                      <td>12-1, 12-2, 12-3</td>
+                      <td>111.11%</td>
+                    </tr>
+                    <tr>
+                      <td>20%</td>
+                      <td>12-4</td>
+                      <td>125%</td>
+                    </tr>
+                    <tr>
+                      <td>30%</td>
+                      <td>12-8, Master Road - Normal</td>
+                      <td>142.86%</td>
+                    </tr>
+                    <tr>
+                      <td>40%</td>
+                      <td>---</td>
+                      <td>166.67%</td>
+                    </tr>
+                    <tr>
+                      <td>50%</td>
+                      <td>12-5, 12-6, 12-7, 13-1, 13-2</td>
+                      <td>200%</td>
+                    </tr>
+                    <tr>
+                      <td>60%</td>
+                      <td>13-3, 13-4, 13-5</td>
+                      <td>250%</td>
+                    </tr>
+                    <tr>
+                      <td>70%</td>
+                      <td>Master Road - Hell</td>
+                      <td>333.33%</td>
+                    </tr>
+
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -252,13 +746,36 @@
               </h2>
             </div>
             <div id="collapseBnP" class="collapse" aria-labelledby="bnp" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <p>There are several ways to apply stats granted by passives and buffs to your character.</p>
+                <p>
+                  Passives that show directly in the stats window (Attacks, Defences and HP) apply additively to each
+                  other (other passives that show there) and multiplicatively to other effects.
+                </p>
+                <p>
+                  Passives and Buffs that do not show in the stats window have several different possible ways of
+                  applying. To find out which buff or passive applies in which way, someone has to test it.
+                </p>
+                <p>
+                  Stats that can be normalized have 3 possible ways of applying:<br>
+                  <strong>Normalized: </strong>Buff stats apply in exactly the same an item would and the granted stats
+                  are reduced by efficiency factor<br>
+                  <strong>Unnormalized: </strong>Buff stats apply directly to the normalized stats and ignore efficiency
+                  factor and can cause the stat to go over its cap.<br>
+                  <strong>Multiplicative: </strong>Buff multiplies the normalized stats and ignores efficiency factor,
+                  but will not cause the stat to go over its cap.
+                </p>
+                <p>
+                  Critical Damage buffs have 2 possible ways of applying:<br>
+                  <strong>Additive: </strong>Critical Damage granted by these buffs add directly to the overall Critical
+                  Damage of the character<br>
+                  <strong>Multiplicative: </strong>Buff multiplies the base 150% Critical Damage and any other Critical
+                  Damage buffs and passives (but not items!)
+                </p>
+                <p class="answer">
+                  Other buffs and passives in most cases apply multiplicatively to all other sources of the stat, but
+                  can still be additive in some cases.
+                </p>
               </div>
             </div>
           </div>
@@ -272,18 +789,825 @@
               </h2>
             </div>
             <div id="collapseWnA" class="collapse" aria-labelledby="wna" data-parent="#FAQ">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <div class="card-body content-faq">
+                <p>Attack and Defense of weapons and armors are determined by the following formula:</p>
+                <p>
+                  <span class="formula">(Fixed + (Required_lvl + Item_lvl + Bonus_lvl) * Scaling) * Slot * Enhancement +
+                    Reforge</span>
+                </p>
+                <p>HP of weapons and armors are determined by the following formula:</p>
+                <p>
+                  <span class="formula">(110 + 18.7 * (Required_lvl - 1)) * Fixed * Item_lvl * Scaling * Slot *
+                    Enhancement / (Fixed + Scaling * 0.1) + Reforge * 10</span>
+                </p>
+                <p>
+                  <strong>Fixed_mod</strong> - Fixed modifier based on Class
+                  <br><strong>Scaling</strong> - Scaling modifier based on Class
+                  <br><strong>Slot</strong> - Modifier based on the Slot of the item
+                  <br><strong>Enhancement</strong> - Modifier based on the Enhancement of the item
+                  <br><strong>Required_lvl</strong> - Level required to equip of the item
+                  <br><strong>Item_lvl</strong> - Value based on the item, El Tear level or Heroic level.
+                  <br><strong>Bonus_lvl</strong> - Bonus Attack/Defense levels of the item
+                  <br><strong>Reforge</strong> - Value based on the Reforge Stage
+                </p>
+                <p>All modifiers can be viewed by opening the tables below</p>
+                <div>
+                  <ul class="nav navtab-light nav-tabs card-header-tabs" id="table-select" role="navlist">
+                    <li class="nav-item">
+                      <a class="nav-link" id="class-mods" data-toggle="tab" href="#cmods" aria-controls="cmods"
+                        aria-selected="true">Class Modifiers</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="slot-mods" data-toggle="tab" href="#smods" aria-controls="smods"
+                        aria-selectedd="false">Slot Modifiers</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="enh-mods" data-toggle="tab" href="#emods" aria-controls="emods"
+                        aria-selectedd="false">Enhancement Modifiers</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="rforge-mods" data-toggle="tab" href="#rmods" aria-controls="rmods"
+                        aria-selectedd="false">Reforge Modifiers</a>
+                    </li>
+                  </ul>
+                  <div class="card-body">
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show" id="cmods" role="tabpanel" aria-labelledby="class-mods">
+                        <table class="table" id="attack_defense_fixed_table"
+                          class="attack_defense_table">
+                          <tbody>
+                            <tr>
+                              <th rowspan="2">Class</th>
+                              <th colspan="5">Fixed</th>
+                              <th colspan="5">Scaling</th>
+                            </tr>
+                            <tr>
+                              <th>Physical Attack</th>
+                              <th>Magical Attack</th>
+                              <th>Physical Defense</th>
+                              <th>Magical Defense</th>
+                              <th>HP</th>
+
+                              <th>Physical Attack</th>
+                              <th>Magical Attack</th>
+                              <th>Physical Defense</th>
+                              <th>Magical Defense</th>
+                              <th>HP</th>
+
+                            </tr>
+                          </tbody>
+                          <tr class="elsword">
+                            <td>Knight Emperor</td>
+                            <td>182</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="elsword">
+                            <td>Rune Master</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>15.75</td>
+                            <td>21.7</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>14.25</td>
+                            <td>15.3</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="elsword">
+                            <td>Immortal</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>18.3</td>
+                            <td>24.7175</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>15.3</td>
+                            <td>14.25</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="aisha">
+                            <td>Aether Sage</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="aisha">
+                            <td>Oz Sorcerer</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>13.2</td>
+                            <td>24.25</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>13.8</td>
+                            <td>15.75</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="aisha">
+                            <td>Metamorphy</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>17.45</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>14.55</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="rena">
+                            <td>Anemos</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>13.2</td>
+                            <td>24.25</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>13.8</td>
+                            <td>15.75</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="rena">
+                            <td>Daybreaker</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>17.45</td>
+                            <td>21.7</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>14.55</td>
+                            <td>15.3</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="rena">
+                            <td>Twilight</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>17.45</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>14.55</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="raven">
+                            <td>Furious Blade</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>19.3675</td>
+                            <td>20.4675</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>15.2325</td>
+                            <td>13.1325</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="raven">
+                            <td>Rage Hearts</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>15.1175</td>
+                            <td>21.3175</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>14.4825</td>
+                            <td>13.2825</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="raven">
+                            <td>Nova Imperator</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>17.6675</td>
+                            <td>23.0175</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>14.9325</td>
+                            <td>13.5825</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="eve">
+                            <td>Code: Ultimate</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>21.7</td>
+                            <td>15.75</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>15.3</td>
+                            <td>14.25</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="eve">
+                            <td>Code: Essencia</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="eve">
+                            <td>Code: Sariel</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>13.2</td>
+                            <td>24.25</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>13.8</td>
+                            <td>15.75</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="chung">
+                            <td>Comet Crusader</td>
+                            <td>182</td>
+                            <td>29</td>
+                            <td>21.7</td>
+                            <td>17.45</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>51</td>
+                            <td>15.3</td>
+                            <td>14.55</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="chung">
+                            <td>Fatal Phantom</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>17.45</td>
+                            <td>21.7</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>14.55</td>
+                            <td>15.3</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="chung">
+                            <td>Centurion</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="ara">
+                            <td>Apsara</td>
+                            <td>182</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="ara">
+                            <td>Devi</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>17.45</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>14.55</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="ara">
+                            <td>Shakti</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>17.45</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>14.55</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="elesis">
+                            <td>Empire Sword</td>
+                            <td>182</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="elesis">
+                            <td>Flame Lord</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>15.75</td>
+                            <td>21.7</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>14.25</td>
+                            <td>15.3</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="elesis">
+                            <td>Bloody Queen</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>21.7</td>
+                            <td>15.75</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>15.3</td>
+                            <td>14.25</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="add">
+                            <td>Doom Bringer</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>18.3</td>
+                            <td>18.3</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>14.7</td>
+                            <td>14.7</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="add">
+                            <td>Dominator</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>13.2</td>
+                            <td>24.25</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>13.8</td>
+                            <td>15.75</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="add">
+                            <td>Mad Paradox</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>17.45</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>14.55</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="lu">
+                            <td>Catastrophe</td>
+                            <td>182</td>
+                            <td>29</td>
+                            <td>21.7</td>
+                            <td>17.45</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>51</td>
+                            <td>15.3</td>
+                            <td>14.55</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="lu">
+                            <td>Innocent</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>17.45</td>
+                            <td>21.7</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>14.55</td>
+                            <td>15.3</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="lu">
+                            <td>Diangelion</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>11.5</td>
+                            <td>25.95</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>13.5</td>
+                            <td>16.05</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="rose">
+                            <td>Tempest Burster</td>
+                            <td>182</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="rose">
+                            <td>Black Massacre</td>
+                            <td>182</td>
+                            <td>29</td>
+                            <td>17.45</td>
+                            <td>21.7</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>51</td>
+                            <td>14.55</td>
+                            <td>15.3</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="rose">
+                            <td>Minerva</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="rose">
+                            <td>Prime Operator</td>
+                            <td>182</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="ain">
+                            <td>Richter</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>17.45</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>79.5</td>
+                            <td>51</td>
+                            <td>14.55</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="ain">
+                            <td>Bluhen</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="ain">
+                            <td>Herrscher</td>
+                            <td>29</td>
+                            <td>190.5</td>
+                            <td>17.45</td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>79.5</td>
+                            <td>14.55</td>
+                            <td>15</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="laby">
+                            <td>Eternity Winner</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>20</td>
+                            <td>17.45</td>
+                            <td>1</td>
+                            <td>79.05</td>
+                            <td>51</td>
+                            <td>15</td>
+                            <td>14.55</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="laby">
+                            <td>Radiant Soul</td>
+                            <td>29</td>
+                            <td>182</td>
+                            <td>15.75</td>
+                            <td>24.25</td>
+                            <td>1</td>
+                            <td>51</td>
+                            <td>78</td>
+                            <td>14.25</td>
+                            <td>15.75</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr class="laby">
+                            <td>Nisha Labyrinth</td>
+                            <td>190.5</td>
+                            <td>29</td>
+                            <td>15.75</td>
+                            <td>21.7</td>
+                            <td>1</td>
+                            <td>79.05</td>
+                            <td>51</td>
+                            <td>14.25</td>
+                            <td>15.3</td>
+                            <td>2.5</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="tab-pane fade" id="smods" role="tabpanel" aria-labelledby="slot-mods">
+                        <table class="table table-bordered" id="attack_defense_slot_table" class="attack_defense_table">
+                          <tbody>
+                            <tr>
+                              <th>Slot</th>
+                              <th>Physical Attack</th>
+                              <th>Magical Attack</th>
+                              <th>Physical Defense</th>
+                              <th>Magical Defense</th>
+                              <th>HP</th>
+                            </tr>
+                          </tbody>
+                          <tr>
+                            <td>Weapon</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0.08</td>
+                            <td>0.08</td>
+                            <td>0.1</td>
+                          </tr>
+                          <tr>
+                            <td>Top</td>
+                            <td>0.03</td>
+                            <td>0</td>
+                            <td>0.3</td>
+                            <td>0.25</td>
+                            <td>0.35</td>
+                          </tr>
+                          <tr>
+                            <td>Bottom</td>
+                            <td>0</td>
+                            <td>0.05</td>
+                            <td>0.25</td>
+                            <td>0.3</td>
+                            <td>0.3</td>
+                          </tr>
+                          <tr>
+                            <td>Gloves</td>
+                            <td>0.05</td>
+                            <td>0</td>
+                            <td>0.2</td>
+                            <td>0.25</td>
+                            <td>0.1</td>
+                          </tr>
+                          <tr>
+                            <td>Shoes</td>
+                            <td>0</td>
+                            <td>0.03</td>
+                            <td>0.25</td>
+                            <td>0.2</td>
+                            <td>0.15</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="tab-pane fade" id="emods" role="tabpanel" aria-labelledby="enh-mods">
+                        <table class="table table-bordered" id="attack_defense_enha_table" class="attack_defense_table">
+                          <tbody>
+                            <tr>
+                              <th>Enhancement Level</th>
+                              <th>Multiplier</th>
+                            </tr>
+                          </tbody>
+                          <tr>
+                            <td>+ 0</td>
+                            <td>1</td>
+                          </tr>
+                          <tr>
+                            <td>+ 1</td>
+                            <td>1.03</td>
+                          </tr>
+                          <tr>
+                            <td>+ 2</td>
+                            <td>1.06</td>
+                          </tr>
+                          <tr>
+                            <td>+ 3</td>
+                            <td>1.09</td>
+                          </tr>
+                          <tr>
+                            <td>+ 4</td>
+                            <td>1.16</td>
+                          </tr>
+                          <tr>
+                            <td>+ 5</td>
+                            <td>1.23</td>
+                          </tr>
+                          <tr>
+                            <td>+ 6</td>
+                            <td>1.3</td>
+                          </tr>
+                          <tr>
+                            <td>+ 7</td>
+                            <td>1.45</td>
+                          </tr>
+                          <tr>
+                            <td>+ 8</td>
+                            <td>1.6</td>
+                          </tr>
+                          <tr>
+                            <td>+ 9</td>
+                            <td>1.75</td>
+                          </tr>
+                          <tr>
+                            <td>+ 10</td>
+                            <td>2.15</td>
+                          </tr>
+                          <tr>
+                            <td>+ 11</td>
+                            <td>2.55</td>
+                          </tr>
+                          <tr>
+                            <td>+ 12</td>
+                            <td>2.95</td>
+                          </tr>
+                          <tr>
+                            <td>+ 13</td>
+                            <td>3.35</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="tab-pane fade" id="rmods" role="tabpanel" aria-labelledby="rforge-mods">
+                        <table class="table table-bordered" id="attack_defense_reforge_table" class="attack_defense_table">
+                          <tbody>
+                            <tr>
+                              <th>Reforge Level</th>
+                              <th>Bonus</th>
+                            </tr>
+                          </tbody>
+                          <tr>
+                            <td>+ 0</td>
+                            <td>0</td>
+                          </tr>
+                          <tr>
+                            <td>+ 1</td>
+                            <td>88</td>
+                          </tr>
+                          <tr>
+                            <td>+ 2</td>
+                            <td>167</td>
+                          </tr>
+                          <tr>
+                            <td>+ 3</td>
+                            <td>240</td>
+                          </tr>
+                          <tr>
+                            <td>+ 4</td>
+                            <td>308</td>
+                          </tr>
+                          <tr>
+                            <td>+ 5</td>
+                            <td>372</td>
+                          </tr>
+                          <tr>
+                            <td>+ 6</td>
+                            <td>432</td>
+                          </tr>
+                          <tr>
+                            <td>+ 7</td>
+                            <td>488</td>
+                          </tr>
+                          <tr>
+                            <td>+ 8</td>
+                            <td>541</td>
+                          </tr>
+                          <tr>
+                            <td>+ 9</td>
+                            <td>591</td>
+                          </tr>
+                          <tr>
+                            <td>+ 10</td>
+                            <td>638</td>
+                          </tr>
+                          <tr>
+                            <td>+ 11</td>
+                            <td>682</td>
+                          </tr>
+                          <tr>
+                            <td>+ 12</td>
+                            <td>724</td>
+                          </tr>
+                          <tr>
+                            <td>+ 13</td>
+                            <td>763</td>
+                          </tr>
+                          <tr>
+                            <td>+ 14</td>
+                            <td>800</td>
+                          </tr>
+                          <tr>
+                            <td>+ 15</td>
+                            <td>835</td>
+                          </tr>
+                          <tr>
+                            <td>+ 16</td>
+                            <td>867</td>
+                          </tr>
+                          <tr>
+                            <td>+ 17</td>
+                            <td>897</td>
+                          </tr>
+                          <tr>
+                            <td>+ 18</td>
+                            <td>925</td>
+                          </tr>
+                          <tr>
+                            <td>+ 19</td>
+                            <td>951</td>
+                          </tr>
+                          <tr>
+                            <td>+ 20</td>
+                            <td>975</td>
+                          </tr>
+                          <tr>
+                            <td>+ 21</td>
+                            <td>1000</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="footer">
+        <p>All lolis belong to Seth...</p>
+        <p>Copyright Elsword Guild, all rights reserved.</p>
+    </div>
     </div>
   </div>
   </div>
