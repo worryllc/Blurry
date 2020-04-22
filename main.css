@@ -18,6 +18,16 @@
     letter-spacing: 3px;
 }
 
+.navtab-light a {
+    font-family: Product Sans;
+    color: rgba(0,0,0,0.5);
+}
+
+.btn-link-light {
+    font-family: Product Sans;
+    color: rgba(0,0,0,0.7)!important;
+}
+
 .bg-black {
     background-color: black!important;
 }
